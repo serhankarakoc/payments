@@ -9,12 +9,12 @@ import "payments"
 func main() {
 	service := payments.PaymentService{}
 
-	paypalPaymentDetails := map[string]interface{}{"paypay_param": "value"}
+	paypalPaymentDetails := map[string]interface{}{"paypal_param": "value"}
 	stripePaymentDetails := map[string]interface{}{"stripe_param": "value"}
 
-	err := service.ProcessPayment("paypay", 100.0, "USD", paypalPaymentDetails)
+	err := service.ProcessPayment("paypal", 100.0, "USD", paypalPaymentDetails)
 	if err != nil {
-		fmt.Println("PayPay payment failed:", err)
+		fmt.Println("PayPal payment failed:", err)
 	}
 
 	err = service.ProcessPayment("stripe", 150.0, "EUR", stripePaymentDetails)
